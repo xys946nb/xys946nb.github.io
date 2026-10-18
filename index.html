@@ -25,13 +25,13 @@ ul{list-style:none}
 .logo-mark{width:34px;height:34px;border-radius:9px;background:#0E3A5D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex:none}
 .logo small{display:block;font-size:11px;font-weight:400;color:#5B6B7B;line-height:1.2}
 .nav{display:none;gap:26px;font-size:15px;align-items:center}
-.nav a{color:#5B6B7B;transition:color .15s}
+.nav a{color:#5B6B7B;transition:color .15}
 .nav a:hover,.nav a.active{color:#0E3A5D;font-weight:700}
 .top-right{display:flex;align-items:center;gap:10px}
 .lang-select{height:38px;padding:0 30px 0 12px;border:1px solid #E2E8F0;border-radius:9px;font-size:13px;font-family:inherit;color:#33414F;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235B6B7B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;cursor:pointer;outline:none;appearance:none;-webkit-appearance:none}
 .lang-select:focus{border-color:#0E3A5D}
 .menu-btn{width:42px;height:42px;border:1px solid #E2E8F0;border-radius:10px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
-.menu-btn span{width:18px;height:2px;background:#16202B;border-radius:2px;transition:transform .2s,opacity .2s}
+.menu-btn span{width:18px;height:2px;background:#16202B;border-radius:2px;transition:transform .2,opacity .2}
 .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .menu-btn.open span:nth-child(2){opacity:0}
 .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -52,7 +52,7 @@ ul{list-style:none}
 .hero h1 em{font-style:normal;color:#FFB38E}
 .hero-sub{font-size:16px;color:#C4D2E0;max-width:520px;margin-bottom:30px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s,background .15s;font-family:inherit}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:transform .15,box-shadow .15,background .15;font-family:inherit}
 .btn:active{transform:scale(.98)}
 .btn.primary{background:#E0632E;color:#fff}
 .btn.primary:hover{background:#C94F1E;box-shadow:0 8px 22px rgba(224,99,46,.35)}
@@ -74,7 +74,7 @@ ul{list-style:none}
 
 /* ===== 卡片通用 ===== */
 .cards{display:grid;grid-template-columns:1fr;gap:16px}
-.card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:22px;transition:transform .18s,box-shadow .18s}
+.card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:22px;transition:transform .18,box-shadow .18}
 .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(14,58,93,.08)}
 @media(min-width:640px){.cards.cols2{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){
@@ -86,7 +86,7 @@ ul{list-style:none}
 .card .ico svg{width:22px;height:22px}
 .card h3{font-size:17px;font-weight:700;margin-bottom:6px}
 .card p{font-size:14px;color:#5B6B7B}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.标签{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .tag{font-size:12px;color:#0E3A5D;background:#EEF3F8;border-radius:999px;padding:3px 10px}
 
 /* ===== 关于 ===== */
@@ -167,7 +167,7 @@ ul{list-style:none}
 .form-card .hint{font-size:13px;color:#8AA0B3;margin-bottom:18px}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:13px;font-weight:700;color:#33414F;margin-bottom:6px}
-.field input,.field textarea{width:100%;padding:11px 14px;border:1px solid #E2E8F0;border-radius:10px;font-size:16px;font-family:inherit;color:#16202B;background:#FAFBFC;outline:none;transition:border .15s,background .15s}
+.field input,.field textarea{width:100%;padding:11px 14px;border:1px solid #E2E8F0;border-radius:10px;font-size:16px;font-family:inherit;color:#16202B;background:#FAFBFC;outline:none;transition:border .15,background .15}
 .field input:focus,.field textarea:focus{border-color:#0E3A5D;background:#fff}
 .field textarea{min-height:104px;resize:vertical}
 
@@ -183,9 +183,9 @@ ul{list-style:none}
 @media(min-width:768px){.footer-top{flex-direction:row;justify-content:space-between;align-items:center}}
 
 /* ===== 提示与动效 ===== */
-.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:#16202B;color:#fff;font-size:14px;padding:13px 22px;border-radius:12px;box-shadow:0 12px 34px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:200;max-width:88vw;text-align:center}
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:#16202B;color:#fff;font-size:14px;padding:13px 22px;border-radius:12px;box-shadow:0 12px 34px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25,transform .25;z-index:200;max-width:88vw;text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6 ease,transform .6 ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
@@ -251,7 +251,7 @@ ul{list-style:none}
     <div class="about-grid">
       <div class="about-card reveal">
         <div class="avatar" id="avatarText">创</div>
-        <h3 id="aboutName">姓名待填</h3>
+        <h3 id="Yusheng Xu">徐羽昇</h3>
         <div class="role" id="aboutRole">创始人 / 技术负责人</div>
         <p id="aboutBrief" style="font-size:13.5px;color:#5B6B7B;text-align:left">常熟昇创机电科技有限公司创始人。技术出身的创业者，既画得出图纸、写得了程序，也下得了车间调试设备。</p>
         <div class="meta" id="aboutMeta"></div>
