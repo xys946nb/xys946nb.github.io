@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>昇创机电 · 个人网站</title>
+<meta name="description" content="常熟昇创机电科技有限公司 — 机电自动化工程师个人网站：个人简介与经历、技能与项目、公司业务、技术博客与联系方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E3A5D'/%3E%3Ctext x='32' y='44' font-size='32' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3E%E5%8D%87%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
+<style>
+/* ===== 基础 ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;color:#16202B;background:#F6F7F9;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== 顶栏 ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #E2E8F0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:#0E3A5D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex:none}
+.logo small{display:block;font-size:11px;font-weight:400;color:#5B6B7B;line-height:1.2}
+.nav{display:none;gap:26px;font-size:15px;align-items:center}
+.nav a{color:#5B6B7B;transition:color .15s}
+.nav a:hover,.nav a.active{color:#0E3A5D;font-weight:700}
+.top-right{display:flex;align-items:center;gap:10px}
+.lang-select{height:38px;padding:0 30px 0 12px;border:1px solid #E2E8F0;border-radius:9px;font-size:13px;font-family:inherit;color:#33414F;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235B6B7B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;cursor:pointer;outline:none;appearance:none;-webkit-appearance:none}
+.lang-select:focus{border-color:#0E3A5D}
+.menu-btn{width:42px;height:42px;border:1px solid #E2E8F0;border-radius:10px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
+.menu-btn span{width:18px;height:2px;background:#16202B;border-radius:2px;transition:transform .2s,opacity .2s}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:560px){.logo small{display:none}.logo{font-size:15px}.lang-select{width:92px;padding-right:24px}}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid #E2E8F0;padding:10px 20px 18px;z-index:99}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px 4px;border-bottom:1px solid #F1F4F7;font-size:16px;color:#16202B}
+.mobile-menu a:last-child{border-bottom:none}
+@media(min-width:768px){.nav{display:flex}.menu-btn{display:none}.mobile-menu{display:none!important}}
+
+/* ===== Hero ===== */
+.hero{position:relative;display:flex;align-items:center;min-height:520px;color:#fff;background:#0B1F33 url(assets/hero.jpg) center/cover no-repeat;padding:130px 0 84px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(9,21,36,.94) 0%,rgba(9,21,36,.78) 46%,rgba(9,21,36,.34) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#FFB38E;margin-bottom:18px}
+.hero-tag::before{content:"";width:20px;height:2px;background:#E0632E}
+.hero h1{font-size:40px;line-height:1.25;font-weight:900;letter-spacing:.5px;margin-bottom:18px;max-width:640px}
+.hero h1 em{font-style:normal;color:#FFB38E}
+.hero-sub{font-size:16px;color:#C4D2E0;max-width:520px;margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s,background .15s;font-family:inherit}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:#E0632E;color:#fff}
+.btn.primary:hover{background:#C94F1E;box-shadow:0 8px 22px rgba(224,99,46,.35)}
+.btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.22)}
+.hero-stats{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+.hero-stats .stat b{display:block;font-size:26px;font-weight:900;color:#fff}
+.hero-stats .stat span{font-size:13px;color:#9FB2C5}
+
+/* ===== 通用区块 ===== */
+.section{padding:72px 0}
+.section.alt{background:#fff}
+.sec-head{margin-bottom:36px;max-width:680px}
+.sec-label{display:inline-flex;align-items:center;gap:8px;color:#E0632E;font-size:13px;font-weight:700;margin-bottom:10px}
+.sec-label::before{content:"";width:22px;height:2px;background:#E0632E}
+.sec-head h2{font-size:30px;font-weight:900;line-height:1.3;margin-bottom:12px}
+.sec-head p{color:#5B6B7B;font-size:15px}
+@media(min-width:768px){.section{padding:88px 0}.sec-head h2{font-size:36px}}
+
+/* ===== 卡片通用 ===== */
+.cards{display:grid;grid-template-columns:1fr;gap:16px}
+.card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:22px;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(14,58,93,.08)}
+@media(min-width:640px){.cards.cols2{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){
+  .cards.cols3{grid-template-columns:repeat(3,1fr)}
+  .cards.cols4{grid-template-columns:repeat(2,1fr)}
+  .cards.cols-3{grid-template-columns:repeat(3,1fr)}
+}
+.card .ico{width:44px;height:44px;border-radius:11px;background:#EEF3F8;color:#0E3A5D;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card .ico svg{width:22px;height:22px}
+.card h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.card p{font-size:14px;color:#5B6B7B}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:12px;color:#0E3A5D;background:#EEF3F8;border-radius:999px;padding:3px 10px}
+
+/* ===== 关于 ===== */
+.about-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
+@media(min-width:900px){.about-grid{grid-template-columns:340px 1fr;gap:56px}}
+.about-card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:30px;text-align:center}
+.avatar{width:104px;height:104px;border-radius:50%;background:#0E3A5D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:900;margin:0 auto 16px}
+.about-card h3{font-size:19px;font-weight:900}
+.about-card .role{color:#E0632E;font-size:14px;font-weight:700;margin:4px 0 14px}
+.about-card .meta{display:grid;gap:8px;text-align:left;margin-top:16px;padding-top:16px;border-top:1px solid #F1F4F7}
+.about-card .meta div{display:flex;align-items:center;gap:10px;font-size:14px;color:#5B6B7B}
+.about-card .meta svg{width:16px;height:16px;color:#0E3A5D;flex:none}
+.about-intro p{font-size:15px;color:#33414F;margin-bottom:14px}
+.timeline{margin-top:26px;border-top:1px solid #E2E8F0;padding-top:26px}
+.tl-item{display:grid;grid-template-columns:76px 22px 1fr;gap:12px;padding-bottom:24px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-time{font-size:13px;font-weight:700;color:#0E3A5D;text-align:right;padding-top:1px}
+.tl-axis{position:relative;display:flex;justify-content:center}
+.tl-axis::before{content:"";position:absolute;top:3px;bottom:-24px;width:2px;background:#E2E8F0;left:50%;transform:translateX(-50%)}
+.tl-item:last-child .tl-axis::before{display:none}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:#0E3A5D;box-shadow:0 0 0 3px #EEF3F8;margin-top:2px;position:relative;z-index:1}
+.tl-body h4{font-size:15px;font-weight:700;margin-bottom:3px}
+.tl-body p{font-size:13.5px;color:#5B6B7B}
+
+/* ===== 业务 ===== */
+.service-card .ico{background:#FDEEE6;color:#E0632E}
+.service-list{display:grid;gap:8px;margin-top:12px}
+.service-list li{display:flex;gap:8px;font-size:13.5px;color:#5B6B7B;align-items:flex-start}
+.service-list li::before{content:"";width:5px;height:5px;border-radius:50%;background:#E0632E;flex:none;margin-top:8px}
+
+/* ===== 流程 ===== */
+.process-card{text-align:left;position:relative}
+.process-num{font-size:26px;font-weight:900;color:#D7E2EC;line-height:1;margin-bottom:10px;font-family:"Noto Sans SC",sans-serif}
+.process-card h3{font-size:16px}
+.process-card h3 b{color:#E0632E;font-weight:700;margin-right:8px}
+
+/* ===== 博客 ===== */
+.post-card{display:flex;flex-direction:column}
+.post-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.post-top .date{font-size:12px;color:#8AA0B3}
+.post-card h3{font-size:16px;margin-bottom:6px}
+.post-card p{font-size:13.5px;color:#5B6B7B;flex:1}
+.post-card .more{display:inline-flex;align-items:center;gap:4px;margin-top:14px;font-size:13px;font-weight:700;color:#0E3A5D;cursor:pointer;background:none;border:none;padding:0;font-family:inherit}
+.post-card .more:hover{color:#E0632E}
+
+/* ===== 项目案例 ===== */
+.project-card{display:flex;flex-direction:column}
+.project-top{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.pno{font-size:12px;font-weight:900;color:#fff;background:#0E3A5D;border-radius:6px;padding:2px 9px}
+.pcat{font-size:12px;color:#8AA0B3}
+.project-card h3{font-size:16.5px}
+.project-card .ctx{font-size:13.5px;color:#5B6B7B;margin:8px 0 12px}
+.project-sol{background:#F6F9FC;border-left:3px solid #E0632E;padding:10px 12px;border-radius:0 8px 8px 0;font-size:13px;color:#33414F;margin-bottom:12px}
+.project-results{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.result{flex:1;min-width:88px;background:#EEF3F8;border-radius:10px;padding:10px 6px;text-align:center}
+.result b{display:block;font-size:18px;font-weight:900;color:#0E3A5D;line-height:1.25}
+.result span{font-size:11.5px;color:#5B6B7B}
+.project-card blockquote{margin:0;font-size:12.5px;color:#5B6B7B;border-top:1px dashed #E2E8F0;padding-top:10px}
+
+/* ===== 合作客户 ===== */
+.clients-box{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:26px}
+.clients-box h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.clients-box .sub{font-size:13px;color:#8AA0B3;margin-bottom:16px}
+.client-pills{display:flex;flex-wrap:wrap;gap:10px}
+.client-pill{font-size:13px;color:#33414F;background:#F1F4F7;border:1px solid #E2E8F0;border-radius:999px;padding:7px 16px}
+
+/* ===== 联系 ===== */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1.15fr;gap:40px}}
+.contact-list{display:grid;gap:12px}
+.contact-item{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:16px 18px}
+.contact-item .ico{width:42px;height:42px;border-radius:10px;background:#EEF3F8;color:#0E3A5D;display:flex;align-items:center;justify-content:center;flex:none}
+.contact-item .ico svg{width:20px;height:20px}
+.contact-item .t{font-size:12px;color:#8AA0B3}
+.contact-item .v{font-size:15px;font-weight:700;color:#16202B}
+.form-card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:26px}
+.form-card h3{font-size:18px;font-weight:900;margin-bottom:6px}
+.form-card .hint{font-size:13px;color:#8AA0B3;margin-bottom:18px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:700;color:#33414F;margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:11px 14px;border:1px solid #E2E8F0;border-radius:10px;font-size:16px;font-family:inherit;color:#16202B;background:#FAFBFC;outline:none;transition:border .15s,background .15s}
+.field input:focus,.field textarea:focus{border-color:#0E3A5D;background:#fff}
+.field textarea{min-height:104px;resize:vertical}
+
+/* ===== Footer ===== */
+.footer{background:#0B1F33;color:#9FB2C5;padding:40px 0 34px;font-size:13px}
+.footer .wrap{display:grid;gap:20px}
+.footer-top{display:flex;flex-direction:column;gap:10px}
+.footer .f-brand{color:#fff;font-weight:900;font-size:17px;display:flex;align-items:center;gap:10px}
+.footer .f-brand .logo-mark{background:#E0632E}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(min-width:768px){.footer-top{flex-direction:row;justify-content:space-between;align-items:center}}
+
+/* ===== 提示与动效 ===== */
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:#16202B;color:#fff;font-size:14px;padding:13px 22px;border-radius:12px;box-shadow:0 12px 34px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:200;max-width:88vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     顶栏 -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#home">
+      <span class="logo-mark">升</span>
+      <span>昇创机电<small>常熟昇创机电科技有限公司</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#about" data-nav="about" data-i18n="nav_about">关于</a>
+      <a href="#skills" data-nav="skills" data-i18n="nav_skills">技能与项目</a>
+      <a href="#services" data-nav="services" data-i18n="nav_services">公司业务</a>
+      <a href="#blog" data-nav="blog" data-i18n="nav_blog">技术博客</a>
+      <a href="#contact" data-nav="contact" data-i18n="nav_contact">联系</a>
+    </nav>
+    <div class="top-right">
+      <select class="lang-select" id="langSelect" aria-label="选择语言 / Language">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+      </select>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" data-i18n="nav_about">关于</a>
+  <a href="#skills" data-i18n="nav_skills">技能与项目</a>
+  <a href="#services" data-i18n="nav_services">公司业务</a>
+  <a href="#blog" data-i18n="nav_blog">技术博客</a>
+  <a href="#contact" data-i18n="nav_contact">联系</a>
+</div>
+
+<!-- ============================================================
+     Hero -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <span class="hero-tag" data-i18n="hero_tag">机电自动化 · 技术服务</span>
+    <h1 data-i18n-html="hero_title">让制造更智能，<br>让产线更高效<em>。</em></h1>
+    <p class="hero-sub" id="heroIntro" data-i18n="hero_sub">深耕汽车内饰缝制加工与自动化改造，从夹具工装、自动化方案到设备维护与 3D 打印，为制造业客户提供从方案设计到落地调试的一站式技术服务。</p>
+    <div class="hero-actions">
+      <button class="btn primary" onclick="location.href='#services'" data-i18n="cta1">了解公司业务</button>
+      <button class="btn ghost" onclick="location.href='#contact'" data-i18n="cta2">联系我们</button>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     关于 -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="about_label">关于我</span>
+      <h2 data-i18n="about_h2">机电自动化领域的工程师与创业者</h2>
+      <p data-i18n="about_p">深耕机械设计与自动化控制，专注用可靠的技术方案解决产线实际问题。</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="avatar" id="avatarText">创</div>
+        <h3 id="aboutName">姓名待填</h3>
+        <div class="role" id="aboutRole">创始人 / 技术负责人</div>
+        <p id="aboutBrief" style="font-size:13.5px;color:#5B6B7B;text-align:left">常熟昇创机电科技有限公司创始人。技术出身的创业者，既画得出图纸、写得了程序，也下得了车间调试设备。</p>
+        <div class="meta" id="aboutMeta"></div>
+      </div>
+      <div class="about-intro reveal">
+        <p data-i18n="about_p1">我是常熟昇创机电科技有限公司的创始人，也是一名机电自动化工程师。多年技术实践让我同时具备<b>机械设计、电气控制与软件开发</b>的复合能力：从 SolidWorks 三维建模、非标机构设计，到台达 / 三菱 PLC 编程、机器视觉方案，再到 ESP32 嵌入式开发与工业通讯组网，能够独立完成从需求分析、方案设计到实施交付的完整闭环。</p>
+        <p data-i18n="about_p2">昇创机电成立于 2026 年，聚焦工业自动控制，提供非标工装夹具设计、自动化产线开发、设备改造升级与产线运维服务，服务领域覆盖汽车内饰缝制加工、电子元器件及机电组件设备制造行业。我们的愿景是：专注创新、引领未来，为制造企业降本增效，实现产业智能化升级。</p>
+        <p data-i18n="about_p3">创立昇创机电的初衷很简单：把扎实的自动化技术，变成客户产线上看得见、算得清的效率提升。每一套方案都从客户的实际工况出发，把成本、节拍、稳定性这些"车间里的语言"放在第一位。</p>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     技能与项目 -->
+<section class="section alt" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="skills_label">技能与项目</span>
+      <h2 data-i18n="skills_h2">技术栈与实战案例</h2>
+      <p data-i18n="skills_p">跨机械、电气、软件三层的技术能力，配合真实产线项目不断打磨。</p>
+    </div>
+    <h3 style="font-size:15px;font-weight:700;color:#33414F;margin-bottom:14px" data-i18n="skills_sub1">核心技术能力</h3>
+    <div class="cards cols3" id="skillsGrid"></div>
+    <h3 style="font-size:15px;font-weight:700;color:#33414F;margin:34px 0 14px" data-i18n="skills_sub2">代表性项目案例</h3>
+    <div class="cards cols4" id="projectsGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     公司业务 -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="services_label">公司业务</span>
+      <h2 data-i18n="services_h2">昇创机电 · 自动化技术服务</h2>
+      <p data-i18n="services_p">以常熟为基地，服务汽车内饰缝制加工、电子元器件与机电组件设备制造企业，把自动化技术落地为产线上看得见的效率。</p>
+    </div>
+    <div class="cards cols3" id="servicesGrid"></div>
+    <div class="sec-head reveal" style="margin-top:56px">
+      <span class="sec-label" data-i18n="process_label">服务流程</span>
+      <h2 data-i18n="process_h2">从需求到交付，四步走完</h2>
+    </div>
+    <div class="cards cols4" id="processGrid"></div>
+    <div class="clients-box reveal" style="margin-top:56px">
+      <h3 data-i18n="clients_h">合作客户</h3>
+      <p class="sub" data-i18n="clients_sub">长期服务汽车内饰缝制加工与汽车安全系统行业的制造企业</p>
+      <div class="client-pills" id="clientsPills"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     技术博客 -->
+<section class="section alt" id="blog">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="blog_label">技术博客</span>
+      <h2 data-i18n="blog_h2">实践中的技术笔记</h2>
+      <p data-i18n="blog_p">把项目里踩过的坑、总结的方法写成文章，与同行交流。</p>
+    </div>
+    <div class="cards cols-3" id="postsGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     联系 -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="contact_label">联系我</span>
+      <h2 data-i18n="contact_h2">聊聊你的自动化需求</h2>
+      <p data-i18n="contact_p">无论是产线改造咨询，还是设备定制需求，欢迎随时联系。</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-list" id="contactList"></div>
+      </div>
+      <form class="form-card reveal" id="contactForm">
+        <h3 data-i18n="form_h3">在线留言</h3>
+        <p class="hint" data-i18n="form_hint">留下需求和联系方式，我会尽快与你沟通。</p>
+        <div class="field">
+          <label for="fName" data-i18n="form_name_l">您的称呼</label>
+          <input type="text" id="fName" name="name" data-i18n-ph="form_name_p" placeholder="如：王经理" required>
+        </div>
+        <div class="field">
+          <label for="fPhone" data-i18n="form_phone_l">联系电话</label>
+          <input type="tel" id="fPhone" name="phone" data-i18n-ph="form_phone_p" placeholder="方便联系的手机号" required>
+        </div>
+        <div class="field">
+          <label for="fMsg" data-i18n="form_msg_l">需求简述</label>
+          <textarea id="fMsg" name="message" data-i18n-ph="form_msg_p" placeholder="如：有一条装配线想改造上料环节……"></textarea>
+        </div>
+        <button type="submit" class="btn primary" style="width:100%;justify-content:center" data-i18n="form_submit">提交留言</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="f-brand"><span class="logo-mark">升</span>常熟昇创机电科技有限公司</div>
+      <div class="footer-links">
+        <a href="#about">关于</a>
+        <a href="#skills">技能与项目</a>
+        <a href="#services">公司业务</a>
+        <a href="#blog">技术博客</a>
+        <a href="#contact">联系</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footerYear"></span>
+      <span data-i18n="footer_tagline">机电自动化 · 技术服务</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* 内容配置区：以下 SITE_DATA 是网站的"内容接口"。文本字段均为 {zh, en} 双语，修改后刷新页面即可生效。 */
+const L = {
+  zh: "zh", en: "en"
+};
+let currentLang = "zh";
+try { currentLang = localStorage.getItem("site_lang") || "zh"; } catch (e) {}
+const T = (v) => typeof v === "string" ? v : ((v && (v[currentLang] || v.zh)) || "");
+
+const SITE_DATA = {
+  stats: [
+    { num: "7+", label: { zh: "合作客户企业", en: "Partner Clients" } },
+    { num: "60%", label: { zh: "案例生产效率提升", en: "Efficiency Gain in Cases" } },
+    { num: "99.9%", label: { zh: "仿形工装产品合格率", en: "Pass Rate of Contour Jig" } }
+  ],
+  person: {
+    avatar: "创",
+    name: { zh: "姓名待填", en: "Name TBD" },
+    role: { zh: "创始人 / 技术负责人", en: "Founder / Technical Lead" },
+    brief: {
+      zh: "常熟昇创机电科技有限公司创始人。技术出身的创业者，既画得出图纸、写得了程序，也下得了车间调试设备。",
+      en: "Founder of Changshu Shengchuang Electromechanical Technology Co., Ltd. A hands-on entrepreneur who drafts designs, writes programs and troubleshoots equipment on the shop floor."
+    },
+    meta: [
+      { icon: "map", text: { zh: "苏州 · 常熟", en: "Changshu, Suzhou" } },
+      { icon: "briefcase", text: { zh: "常熟昇创机电科技有限公司", en: "Changshu Shengchuang Electromechanical Technology Co., Ltd." } }
+    ]
+  },
+  timeline: [
+    { time: { zh: "起步期", en: "Foundation" }, title: { zh: "机械设计功底", en: "Mechanical Design Foundation" }, desc: { zh: "CAD 制图与 SolidWorks 三维建模，打下非标设计的扎实基础。", en: "CAD drafting and SolidWorks 3D modeling built a solid foundation for custom design." } },
+    { time: { zh: "深耕期", en: "Specialization" }, title: { zh: "工业自动化实践", en: "Industrial Automation Practice" }, desc: { zh: "台达 / 三菱 PLC 编程、振动盘调试、Modbus 通讯，深入产线一线。", en: "Delta / Mitsubishi PLC programming, vibratory feeder tuning and Modbus communication, deep in the field." } },
+    { time: { zh: "2026", en: "2026" }, title: { zh: "创立昇创机电", en: "Founded Shengchuang" }, desc: { zh: "公司成立于 2026 年，专注自动化与非标自动化解决方案，为制造企业提供可落地的技术服务。", en: "Founded in 2026, focused on automation and custom automation solutions with practical technical services for manufacturers." } },
+    { time: { zh: "拓展期", en: "Expansion" }, title: { zh: "嵌入式与电机控制", en: "Embedded & Motor Control" }, desc: { zh: "ESP32-S3 单片机开发、无刷电机电调与缓启停方案，拓展智能硬件能力。", en: "ESP32-S3 development, brushless ESC and soft start/stop solutions expanded smart-hardware capabilities." } },
+    { time: { zh: "前沿", en: "Frontier" }, title: { zh: "精密检测探索", en: "Precision Measurement R&D" }, desc: { zh: "激光超声检测等精密测量技术研究，向更高精度检测方向延伸。", en: "Research into laser ultrasonic inspection and other precision measurement technologies, pushing toward higher-accuracy inspection." } }
+  ],
+  skills: [
+    { icon: "cad", name: { zh: "机械设计", en: "Mechanical Design" }, desc: { zh: "CAD / SolidWorks 非标机构与仿形工装设计", en: "CAD / SolidWorks custom mechanisms & contour jig design" } },
+    { icon: "plc", name: { zh: "PLC 编程", en: "PLC Programming" }, desc: { zh: "台达 / 三菱 PLC 逻辑控制与产线自动化程序", en: "Delta / Mitsubishi PLC logic control & line automation programs" } },
+    { icon: "vision", name: { zh: "机器视觉", en: "Machine Vision" }, desc: { zh: "视觉检测与定位引导方案设计与应用", en: "Vision inspection & positioning guidance design and application" } },
+    { icon: "mcu", name: { zh: "单片机开发", en: "Embedded MCU Development" }, desc: { zh: "ESP32-S3 嵌入式硬件与传感器集成", en: "ESP32-S3 embedded hardware & sensor integration" } },
+    { icon: "motor", name: { zh: "电机控制", en: "Motor Control" }, desc: { zh: "无刷电机、电调驱动与缓启停方案", en: "Brushless motors, ESC drives & soft start/stop solutions" } },
+    { icon: "net", name: { zh: "工业通讯", en: "Industrial Communication" }, desc: { zh: "Modbus 组网、设备互联与数据采集", en: "Modbus networking, device interconnection & data acquisition" } },
+    { icon: "sim", name: { zh: "仿真分析", en: "Simulation & Analysis" }, desc: { zh: "产线流程仿真与生产数据检测分析", en: "Line process simulation & production data analysis" } },
+    { icon: "fix", name: { zh: "现场调试与售后", en: "Commissioning & After-sales" }, desc: { zh: "设备现场安装调试与售后维护保养", en: "On-site installation, commissioning & maintenance" } }
+  ],
+  projects: [
+    {
+      no: { zh: "案例一", en: "Case 1" }, cat: { zh: "缝制自动化", en: "Sewing Automation" },
+      title: { zh: "花样机车缝自动化改造", en: "Quilting Machine Sewing Automation" },
+      ctx: { zh: "客户产品零部件较多、人工摆片易出错，要求单件缝纫 58 秒以内、8 小时产出 800 件。", en: "Many parts, error-prone manual placement; requirements: 58 s sewing per piece, 800 pieces per 8-hour shift." },
+      sol: { zh: "双花样机并行车缝，机械手替代人工摆片，自动换梭机替代锁芯更换，杜绝多片漏片报废。", en: "Twin quilting machines sewing in parallel, robotic placement replacing manual work, automatic bobbin changer — eliminating scrap from missing or doubled parts." },
+      results: [{ n: "60%", t: { zh: "生产效率提高", en: "Efficiency Increase" } }, { n: "20%", t: { zh: "产品合格率提高", en: "Pass Rate Increase" } }, { n: "35%", t: { zh: "生产成本降低", en: "Cost Reduction" } }],
+      quote: { zh: "解决方案非常专业，帮助我们解决了生产难题，显著提升了市场竞争力。", en: "The solution was highly professional and helped us solve production challenges, significantly boosting our competitiveness." }
+    },
+    {
+      no: { zh: "案例二", en: "Case 2" }, cat: { zh: "仿形工装", en: "Contour Jig" },
+      title: { zh: "TPU 仿形装配工装", en: "TPU Contour Assembly Jig" },
+      ctx: { zh: "客户需要仿产品外形、方便员工组装，提升效率与标准化水平。", en: "The client needed a jig matching the product contour for easier assembly, higher efficiency and standardization." },
+      sol: { zh: "采用 TPU 材料接触产品，铰链开合压制成型，降低工人操作复杂度。", en: "TPU contact surfaces, hinged open-close press forming — reducing operator complexity." },
+      results: [{ n: "50%", t: { zh: "生产效率提升", en: "Efficiency Gain" } }, { n: "99.9%", t: { zh: "产品合格率", en: "Pass Rate" } }, { n: { zh: "显著", en: "High" }, t: { zh: "安全性提升", en: "Improved Safety" } }],
+      quote: { zh: "技术先进，服务周到，是我们值得信赖的合作伙伴。", en: "Advanced technology and attentive service — a partner we can trust." }
+    },
+    {
+      no: { zh: "案例三", en: "Case 3" }, cat: { zh: "安全气囊夹具", en: "Airbag Fixtures" },
+      title: { zh: "安全气囊缝制夹具组", en: "Airbag Sewing Fixture Set" },
+      ctx: { zh: "布片柔软、缝纫范围需按客户样件确定，需拆解步骤并设计每一步夹具。", en: "Soft fabric, sewing range defined by customer samples — the process had to be broken down with a fixture designed for each step." },
+      sol: { zh: "按花型复杂程度依次拆解加工步骤，添加定位销孔固定布片，设计分步夹具。", en: "Steps sequenced by pattern complexity, locating pin holes added to secure fabric, and step-by-step fixtures designed." },
+      results: [{ n: "60%", t: { zh: "生产效率提高", en: "Efficiency Increase" } }, { n: "20%", t: { zh: "产品合格率提高", en: "Pass Rate Increase" } }, { n: "35%", t: { zh: "生产成本降低", en: "Cost Reduction" } }],
+      quote: { zh: "长期合作，解决方案非常专业，显著缩短了实现量产周期。", en: "Long-term partnership — a highly professional solution that significantly shortened time-to-volume-production." }
+    },
+    {
+      no: { zh: "案例四", en: "Case 4" }, cat: { zh: "定制加工", en: "Custom Machining" },
+      title: { zh: "精密工件定制加工", en: "Precision Custom Machining" },
+      ctx: { zh: "按客户设计尺寸与精度要求完成工件加工，并为每件产品标注生产日期。", en: "Machining to the customer's dimensions and tolerances, with production date marking on every part." },
+      sol: { zh: "依据图纸尺寸精度组织定制加工，集成生产日期打标工序，满足批次追溯要求。", en: "Custom machining per drawing, integrated production-date marking for batch traceability." },
+      results: [{ n: "60%", t: { zh: "生产效率提高", en: "Efficiency Increase" } }, { n: "20%", t: { zh: "产品合格率提高", en: "Pass Rate Increase" } }, { n: "35%", t: { zh: "生产成本降低", en: "Cost Reduction" } }],
+      quote: { zh: "长期合作，解决方案非常专业，显著缩短了实现量产周期。", en: "Long-term partnership — a highly professional solution that significantly shortened time-to-volume-production." }
+    }
+  ],
+  services: [
+    { icon: "design", name: { zh: "夹具工装设计", en: "Jig & Fixture Design" }, desc: { zh: "依据客户产品制造要求，设计夹具与仿形工装，支撑产线装配标准化。", en: "Jigs and contour fixtures designed to the customer's manufacturing requirements, supporting standardized assembly." }, points: [{ zh: "仿形工装与定位夹具设计", en: "Contour fixtures & locating jigs" }, { zh: "TPU 等柔性材料应用", en: "Flexible materials such as TPU" }, { zh: "铰链开合压制方案", en: "Hinged press-forming solutions" }] },
+    { icon: "gear", name: { zh: "自动化设备方案设计", en: "Automation Solution Design" }, desc: { zh: "按客户需求提供自动化与非标自动化解决方案，覆盖方案到落地。", en: "Automation and custom automation solutions delivered from concept to commissioning per client needs." }, points: [{ zh: "自动化产线方案规划", en: "Automated line planning" }, { zh: "非标自动化设备开发", en: "Custom automation equipment development" }, { zh: "方案评审与节拍测算", en: "Solution review & cycle-time estimation" }] },
+    { icon: "fix", name: { zh: "工厂电气设备维护", en: "Factory Electrical Maintenance" }, desc: { zh: "为工厂提供产线设备维修、非标零部件更换与定制件加工服务。", en: "Repair services, custom part replacement and machining for production lines." }, points: [{ zh: "产线设备维修保养", en: "Line equipment repair & maintenance" }, { zh: "非标零部件更换", en: "Custom part replacement" }, { zh: "定制件加工", en: "Custom machining" }] },
+    { icon: "mcu", name: { zh: "电气装配与 3D 打印", en: "Electrical Assembly & 3D Printing" }, desc: { zh: "设备组装、生产、零件加工与产品打样，快速验证产品方案。", en: "Equipment assembly, production, part machining and prototyping for fast concept validation." }, points: [{ zh: "设备组装与电气装配", en: "Equipment & electrical assembly" }, { zh: "零件加工与生产", en: "Part machining & production" }, { zh: "产品打样与 3D 打印", en: "Prototyping & 3D printing" }] },
+    { icon: "battery", name: { zh: "储能设备自动化", en: "Energy Storage Automation" }, desc: { zh: "面向储能电池 PACK、储能柜装配与测试环节，提供产线自动化与工装方案。", en: "Automation and tooling solutions for battery PACK, storage cabinet assembly and testing." }, points: [{ zh: "储能 PACK 装配线方案", en: "Battery PACK assembly line solutions" }, { zh: "储能柜产线自动化", en: "Storage cabinet line automation" }, { zh: "模组装配工装与检测", en: "Module assembly tooling & testing" }] }
+  ],
+  process: [
+    { title: { zh: "需求沟通", en: "Requirement Analysis" }, desc: { zh: "了解工艺流程、瓶颈与目标，确认改造范围与预算。", en: "Understand the process, bottlenecks and goals; confirm scope and budget." } },
+    { title: { zh: "方案设计", en: "Solution Design" }, desc: { zh: "输出技术方案、节拍测算与成本评估，方案评审确认。", en: "Deliver the technical proposal, cycle-time estimate and cost evaluation for review." } },
+    { title: { zh: "实施调试", en: "Implementation & Commissioning" }, desc: { zh: "设备制造、程序开发与现场安装调试，试产验证。", en: "Equipment build, program development, on-site installation and trial production." } },
+    { title: { zh: "售后支持", en: "After-sales Support" }, desc: { zh: "交付培训、质保服务与持续优化，陪伴产线稳定运行。", en: "Training, warranty and continuous improvement to keep lines running reliably." } }
+  ],
+  clients: [
+    "延锋汽车饰件系统有限公司",
+    "延锋座椅（常熟）有限公司",
+    "采埃孚汽车安全系统（张家港）有限公司",
+    "奥托立夫（中国）汽车安全系统有限公司",
+    "宜致汽车安全系统（常熟）有限公司",
+    "吉丝特汽车安全部件（常熟）有限公司",
+    "河南邦维高科新材料科技有限公司"
+  ],
+  posts: [
+    { date: "2026-10", tag: { zh: "自动化", en: "Automation" }, title: { zh: "自动化改造如何评估 ROI：先算清这四笔账", en: "How to Evaluate ROI of Automation: Start with These Four Figures" }, excerpt: { zh: "改造前算清人力、节拍、质量与维护四笔账，投资回报才不是一笔糊涂账。", en: "Calculate labor, cycle time, quality and maintenance before the retrofit — only then is ROI real." } },
+    { date: "2026-09", tag: { zh: "嵌入式", en: "Embedded" }, title: { zh: "ESP32-S3 在工业数据采集中的落地要点", en: "ESP32-S3 for Industrial Data Acquisition: Key Points" }, excerpt: { zh: "从传感器选型到 Modbus 协议对接，聊聊 ESP32-S3 上工业数据采集的工程细节。", en: "From sensor selection to Modbus integration — engineering details of industrial data acquisition on ESP32-S3." } },
+    { date: "2026-08", tag: { zh: "视觉", en: "Vision" }, title: { zh: "机器视觉选型指南：相机、镜头与光源", en: "Machine Vision Selection Guide: Camera, Lens & Lighting" }, excerpt: { zh: "视觉得分七分靠打光。一次讲清三大件的选型逻辑与常见坑。", en: "Lighting does 70% of the work — selection logic and common pitfalls of the three core components." } }
+  ],
+  contact: {
+    phone: "185-4994-5003",
+    email: "2646739454@qq.com",
+    location: "江苏省苏州市 · 常熟"
+  }
+};
+
+/* ===== 静态文案字典（中英双语） ===== */
+const I18N = {
+  nav_about: { zh: "关于", en: "About" },
+  nav_skills: { zh: "技能与项目", en: "Skills & Projects" },
+  nav_services: { zh: "公司业务", en: "Services" },
+  nav_blog: { zh: "技术博客", en: "Tech Blog" },
+  nav_contact: { zh: "联系", en: "Contact" },
+  hero_tag: { zh: "机电自动化 · 技术服务", en: "Mechatronics Automation · Technical Services" },
+  hero_title: { zh: "让制造更智能，<br>让产线更高效<em>。</em>", en: "Smarter manufacturing,<br>more efficient lines<em>.</em>" },
+  hero_sub: { zh: "深耕汽车内饰缝制加工与自动化改造，从夹具工装、自动化方案到设备维护与 3D 打印，为制造业客户提供从方案设计到落地调试的一站式技术服务。", en: "Specializing in automotive interior sewing and automation, we provide one-stop technical services from fixtures and automation solutions to equipment maintenance and 3D printing — from design to commissioning." },
+  cta1: { zh: "了解公司业务", en: "Our Services" },
+  cta2: { zh: "联系我们", en: "Contact Us" },
+  about_label: { zh: "关于我", en: "About Me" },
+  about_h2: { zh: "机电自动化领域的工程师与创业者", en: "Engineer & Entrepreneur in Mechatronics" },
+  about_p: { zh: "深耕机械设计与自动化控制，专注用可靠的技术方案解决产线实际问题。", en: "Deep expertise in mechanical design and automation control, focused on solving real production-line problems with reliable solutions." },
+  about_p1: { zh: "我是常熟昇创机电科技有限公司的创始人，也是一名机电自动化工程师。多年技术实践让我同时具备<b>机械设计、电气控制与软件开发</b>的复合能力：从 SolidWorks 三维建模、非标机构设计，到台达 / 三菱 PLC 编程、机器视觉方案，再到 ESP32 嵌入式开发与工业通讯组网，能够独立完成从需求分析、方案设计到实施交付的完整闭环。", en: "I am the founder of Changshu Shengchuang Electromechanical Technology Co., Ltd. and a mechatronics automation engineer. Years of hands-on practice have given me combined expertise in <b>mechanical design, electrical control and software development</b> — from SolidWorks 3D modeling and custom mechanism design, to Delta / Mitsubishi PLC programming, machine vision, ESP32 embedded development and industrial communication networking." },
+  about_p2: { zh: "昇创机电成立于 2026 年，聚焦工业自动控制，提供非标工装夹具设计、自动化产线开发、设备改造升级与产线运维服务，服务领域覆盖汽车内饰缝制加工、电子元器件及机电组件设备制造行业。我们的愿景是：专注创新、引领未来，为制造企业降本增效，实现产业智能化升级。", en: "Founded in 2026, Shengchuang focuses on industrial automatic control, offering custom jigs & fixtures, automated production line development, equipment upgrades and line maintenance — serving automotive interior sewing, electronic components and electromechanical component manufacturing. Our vision: dedicated innovation that leads the future, cutting costs and boosting efficiency for manufacturers on the road to smart industry." },
+  about_p3: { zh: "创立昇创机电的初衷很简单：把扎实的自动化技术，变成客户产线上看得见、算得清的效率提升。每一套方案都从客户的实际工况出发，把成本、节拍、稳定性这些\"车间里的语言\"放在第一位。", en: "The original purpose behind Shengchuang is simple: turn solid automation technology into efficiency gains our clients can see and measure on their lines. Every proposal starts from the customer's actual conditions, putting cost, cycle time and stability — the language of the shop floor — first." },
+  skills_label: { zh: "技能与项目", en: "Skills & Projects" },
+  skills_h2: { zh: "技术栈与实战案例", en: "Skills & Real-World Cases" },
+  skills_p: { zh: "跨机械、电气、软件三层的技术能力，配合真实产线项目不断打磨。", en: "Cross-layer skills in mechanics, electrical and software, honed through real production projects." },
+  skills_sub1: { zh: "核心技术能力", en: "Core Skills" },
+  skills_sub2: { zh: "代表性项目案例", en: "Selected Project Cases" },
+  services_label: { zh: "公司业务", en: "Our Services" },
+  services_h2: { zh: "昇创机电 · 自动化技术服务", en: "Shengchuang · Automation Technical Services" },
+  services_p: { zh: "以常熟为基地，服务汽车内饰缝制加工、电子元器件与机电组件设备制造企业，把自动化技术落地为产线上看得见的效率。", en: "Based in Changshu, serving automotive interior sewing, electronic components and electromechanical component manufacturers — turning automation into visible line efficiency." },
+  process_label: { zh: "服务流程", en: "Our Process" },
+  process_h2: { zh: "从需求到交付，四步走完", en: "Four Steps from Need to Delivery" },
+  clients_h: { zh: "合作客户", en: "Our Clients" },
+  clients_sub: { zh: "长期服务汽车内饰缝制加工与汽车安全系统行业的制造企业", en: "Long-term partners in automotive interior sewing and automotive safety systems" },
+  blog_label: { zh: "技术博客", en: "Tech Blog" },
+  blog_h2: { zh: "实践中的技术笔记", en: "Notes from Practice" },
+  blog_p: { zh: "把项目里踩过的坑、总结的方法写成文章，与同行交流。", en: "Lessons and methods from real projects, shared with fellow engineers." },
+  contact_label: { zh: "联系我", en: "Get in Touch" },
+  contact_h2: { zh: "聊聊你的自动化需求", en: "Let's Talk About Your Automation Needs" },
+  contact_p: { zh: "无论是产线改造咨询，还是设备定制需求，欢迎随时联系。", en: "From line retrofit consulting to custom equipment requests — feel free to reach out." },
+  c_phone: { zh: "电话", en: "Phone" },
+  c_email: { zh: "邮箱", en: "Email" },
+  c_location: { zh: "地址", en: "Address" },
+  form_h3: { zh: "在线留言", en: "Send a Message" },
+  form_hint: { zh: "留下需求和联系方式，我会尽快与你沟通。", en: "Leave your requirements and contact info — I'll get back to you soon." },
+  form_name_l: { zh: "您的称呼", en: "Your Name" },
+  form_name_p: { zh: "如：王经理", en: "e.g., Manager Wang" },
+  form_phone_l: { zh: "联系电话", en: "Phone Number" },
+  form_phone_p: { zh: "方便联系的手机号", en: "A number where we can reach you" },
+  form_msg_l: { zh: "需求简述", en: "Your Requirements" },
+  form_msg_p: { zh: "如：有一条装配线想改造上料环节……", en: "e.g., I'd like to automate the loading step of an assembly line…" },
+  form_submit: { zh: "提交留言", en: "Submit" },
+  footer_tagline: { zh: "机电自动化 · 技术服务", en: "Mechatronics Automation · Technical Services" },
+  toast_post: { zh: "示例文章：可在页面顶部 SITE_DATA.posts 中替换为你的真实文章", en: "Sample article: replace it with your real post in SITE_DATA.posts at the top of the page" },
+  toast_form: { zh: "留言已收到（演示）。如需即时沟通，请直接通过电话或邮箱联系。", en: "Message received (demo). For immediate contact, please call or email." },
+  quote_label: { zh: "客户评价：", en: "Client review: " },
+  post_more: { zh: "阅读全文", en: "Read More" },
+  copyright: { zh: "保留所有权利", en: "All rights reserved" }
+};
+
+/* ===== 图标库（内联 SVG） ===== */
+const ICONS = {
+  map: '<path d="M12 21s-7-5.3-7-11a7 7 0 0114 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/>',
+  cad: '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/>',
+  plc: '<path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>',
+  vision: '<path d="M4 8h3l2-3h6l2 3h3a1 1 0 011 1v9a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z"/><circle cx="12" cy="13.5" r="3.5"/>',
+  mcu: '<rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>',
+  net: '<circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="12" cy="19" r="2.5"/><path d="M7 10.5l10-4M7 13.5l10 4"/>',
+  motor: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
+  gear: '<circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"/>',
+  design: '<path d="M3 17l14-14 4 4L7 21l-4-4z"/><path d="M9 13l2 2M11 11l2 2M13 9l2 2"/>',
+  support: '<path d="M4 14v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/>',
+  sim: '<path d="M4 4v16h16"/><path d="M7 15l4-6 4 3 5-7"/>',
+  fix: '<path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>',
+  phone: '<path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',
+  wechat: '<path d="M21 11.5a8.5 8.5 0 01-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1121 11.5z"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  battery: '<rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 10.5v3"/><path d="M6 11v2M9 10.5v3M12 10.5v3"/>'
+};
+
+/* ===== 渲染 ===== */
+const $ = (id) => document.getElementById(id);
+const i18n = (key) => T(I18N[key]);
+const svg = (n) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[n] || "") + '</svg>';
+
+function render() {
+  const D = SITE_DATA;
+  // Hero 数据
+  $("heroStats").innerHTML = D.stats.map(s => '<div class="stat"><b>' + s.num + '</b><span>' + T(s.label) + '</span></div>').join("");
+  // 关于
+  $("avatarText").textContent = D.person.avatar;
+  $("aboutName").textContent = T(D.person.name);
+  $("aboutRole").textContent = T(D.person.role);
+  $("aboutBrief").textContent = T(D.person.brief);
+  $("aboutMeta").innerHTML = D.person.meta.map(m => '<div>' + svg(m.icon) + '<span>' + T(m.text) + '</span></div>').join("");
+  $("timeline").innerHTML = D.timeline.map(t =>
+    '<div class="tl-item"><div class="tl-time">' + T(t.time) + '</div><div class="tl-axis"><span class="tl-dot"></span></div><div class="tl-body"><h4>' + T(t.title) + '</h4><p>' + T(t.desc) + '</p></div></div>'
+  ).join("");
+  // 技能
+  $("skillsGrid").innerHTML = D.skills.map(s =>
+    '<div class="card"><div class="ico">' + svg(s.icon) + '</div><h3>' + T(s.name) + '</h3><p>' + T(s.desc) + '</p></div>'
+  ).join("");
+  // 项目
+  $("projectsGrid").innerHTML = D.projects.map(p =>
+    '<div class="card project-card"><div class="project-top"><span class="pno">' + T(p.no) + '</span><span class="pcat">' + T(p.cat) + '</span></div><h3>' + T(p.title) + '</h3><p class="ctx">' + T(p.ctx) + '</p><div class="project-sol">' + T(p.sol) + '</div><div class="project-results">' + p.results.map(r => '<div class="result"><b>' + T(r.n) + '</b><span>' + T(r.t) + '</span></div>').join("") + '</div><blockquote>' + i18n("quote_label") + T(p.quote) + '</blockquote></div>'
+  ).join("");
+  // 业务
+  $("servicesGrid").innerHTML = D.services.map(s =>
+    '<div class="card service-card"><div class="ico">' + svg(s.icon) + '</div><h3>' + T(s.name) + '</h3><p>' + T(s.desc) + '</p><ul class="service-list">' + s.points.map(p => '<li>' + T(p) + '</li>').join("") + '</ul></div>'
+  ).join("");
+  // 流程
+  $("processGrid").innerHTML = D.process.map((p, i) =>
+    '<div class="card process-card"><div class="process-num">' + String(i + 1).padStart(2, "0") + '</div><h3><b>' + T(p.title) + '</b></h3><p>' + T(p.desc) + '</p></div>'
+  ).join("");
+  // 合作客户
+  $("clientsPills").innerHTML = D.clients.map(c => '<span class="client-pill">' + c + '</span>').join("");
+  // 博客
+  $("postsGrid").innerHTML = D.posts.map(p =>
+    '<div class="card post-card"><div class="post-top"><span class="tag">' + T(p.tag) + '</span><span class="date">' + p.date + '</span></div><h3>' + T(p.title) + '</h3><p>' + T(p.excerpt) + '</p><button class="more" type="button">' + i18n("post_more") + '</button></div>'
+  ).join("");
+  // 联系
+  const contactItems = [
+    { icon: "phone", t: "c_phone", v: D.contact.phone },
+    { icon: "mail", t: "c_email", v: D.contact.email },
+    { icon: "map", t: "c_location", v: D.contact.location }
+  ];
+  $("contactList").innerHTML = contactItems.map(c =>
+    '<div class="contact-item"><div class="ico">' + svg(c.icon) + '</div><div><div class="t">' + i18n(c.t) + '</div><div class="v">' + c.v + '</div></div></div>'
+  ).join("");
+  // Footer
+  $("footerYear").textContent = "© " + new Date().getFullYear() + " 常熟昇创机电科技有限公司 · " + i18n("copyright");
+}
+
+/* ===== 静态文案应用（data-i18n / data-i18n-html / data-i18n-ph） ===== */
+function applyStaticI18n() {
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = i18n(el.getAttribute("data-i18n")); });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = i18n(el.getAttribute("data-i18n-html")); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.setAttribute("placeholder", i18n(el.getAttribute("data-i18n-ph"))); });
+}
+
+/* ===== 语言切换 ===== */
+function setLang(lang) {
+  currentLang = lang === "en" ? "en" : "zh";
+  try { localStorage.setItem("site_lang", currentLang); } catch (e) {}
+  const sel = $("langSelect");
+  if (sel) sel.value = currentLang;
+  document.documentElement.lang = currentLang === "en" ? "en" : "zh-CN";
+  render();
+  applyStaticI18n();
+}
+
+/* ===== 交互 ===== */
+let toastTimer = null;
+function toast(msg) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+}
+
+// 移动端菜单
+const menuBtn = $("menuBtn");
+const mobileMenu = $("mobileMenu");
+menuBtn.addEventListener("click", () => {
+  const open = mobileMenu.classList.toggle("open");
+  menuBtn.classList.toggle("open", open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+});
+mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  mobileMenu.classList.remove("open");
+  menuBtn.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+// 导航高亮
+const navLinks = document.querySelectorAll("[data-nav]");
+const sectionIds = ["about", "skills", "services", "blog", "contact"];
+window.addEventListener("scroll", () => {
+  let cur = "";
+  for (const id of sectionIds) {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 120) cur = id;
+  }
+  navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("data-nav") === cur));
+}, { passive: true });
+
+// 滚动揭示
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+// 博客示例提示
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".post-card .more")) {
+    toast(i18n("toast_post"));
+  }
+});
+
+// 留言表单（前端演示）
+$("contactForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  toast(i18n("toast_form"));
+  e.target.reset();
+});
+
+/* ===== 启动 ===== */
+setLang(currentLang);
+$("langSelect").addEventListener("change", (e) => setLang(e.target.value));
+</script>
+</body>
+</html>
